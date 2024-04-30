@@ -37,7 +37,7 @@ app.post('/alquilable', async (req, res)=>{
     const newRecord = await db.Alquilable.create(alquilable);
     res.status(201).json(newRecord);
   } catch (error) {
-    res.status(406).json(`El campo descripcion no puede ser null`);
+    res.status(500).json(`Error: ${error.message}`);
   }
 })
 
